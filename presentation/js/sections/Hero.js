@@ -12,7 +12,7 @@ export const HeroSection = () => {
                 ]),
                 createElement('h1', ['text-6xl', 'md:text-8xl', 'font-bold', 'mb-6', 'leading-none', 'tracking-tighter'], [
                     createElement('span', ['block', 'text-white'], ['FINCH']),
-                    createElement('span', ['block', 'text-transparent', 'bg-clip-text', 'bg-gradient-to-r', 'from-blue-400', 'to-emerald-400', 'text-4xl', 'md:text-5xl', 'mt-2'], ['THE SAFE SHADOW AI'])
+                    createElement('span', ['block', 'text-transparent', 'bg-clip-text', 'bg-gradient-to-r', 'from-blue-400', 'to-emerald-400', 'text-4xl', 'md:text-5xl', 'mt-2'], ['THE SAFE POCKET AI'])
                 ]),
                 createElement('p', ['text-xl', 'text-gray-400', 'mb-8', 'leading-relaxed', 'max-w-xl'], [
                     '78% of your compliance team uses ChatGPT against policy.',
