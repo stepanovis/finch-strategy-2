@@ -1,1 +1,1 @@
-# strategy-small-models
+# finch-strategy-2
