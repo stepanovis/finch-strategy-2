@@ -134,25 +134,143 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.6;
 }
 
-/* Responsive */
+/* ==========================================================================
+   MOBILE OPTIMIZATION (Overrides inline styles from JS slides)
+   ========================================================================== */
 @media (max-width: 768px) {
-    .key-message h1 {
-        font-size: 2.5rem;
-    }
-    
-    .key-message .thesis {
-        font-size: 1.2rem;
-    }
-    
-    .title-slide h1 {
-        font-size: 4rem;
-    }
-    
-    .details {
-        padding: 1.5rem;
-    }
-    
+    /* --- Layout & Spacing --- */
     .slide-section {
-        padding: 1rem;
+        padding: 1.5rem !important;
+        min-height: auto; /* Let content grow naturally */
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    .slide {
+        padding-left: 0 !important;
+        text-align: left !important;
+    }
+
+    /* --- Global Typography Scaling --- */
+    h1 {
+        font-size: 3rem !important; /* Clamp giant desktop fonts (5rem-10rem) */
+        margin-bottom: 2rem !important;
+        line-height: 1.1 !important;
+        letter-spacing: -2px !important;
+    }
+
+    h2 {
+        font-size: 0.8rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    /* --- Container Resets (Grid to Column) --- */
+    .specs-container,
+    .facts-container,
+    .points-container,
+    .formula-list,
+    .loop-container,
+    .facts-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        grid-template-columns: 1fr !important;
+        gap: 2.5rem !important;
+        border-left: none !important; /* Remove desktop vertical dividers */
+        padding-left: 0 !important;
+    }
+
+    /* --- Rows & Items --- */
+    .spec-col, 
+    .fact-row, 
+    .point-row, 
+    .formula-row,
+    .loop-step {
+        width: 100%;
+        padding: 0 !important;
+        border: none !important;
+        flex-direction: column !important; /* Stack content vertically */
+        align-items: flex-start !important;
+        gap: 0.5rem !important;
+    }
+
+    /* --- Specific Typography Overrides --- */
+    .spec-val,
+    .point-val,
+    .grid-val,
+    .fact-title,
+    .step-title,
+    .content-title {
+        font-size: 1.75rem !important;
+        line-height: 1.2 !important;
+        min-width: 0 !important; /* Fix flex overflow */
+    }
+
+    .spec-label,
+    .point-desc,
+    .fact-desc,
+    .step-desc,
+    .grid-desc,
+    .content-desc {
+        font-size: 1rem !important;
+    }
+
+    /* --- Slide 02 Diagram (The Wrapper Trap) --- */
+    .diagram-container {
+        margin-bottom: 2rem !important;
+    }
+    
+    .middle-layer {
+        flex-direction: column !important;
+        height: auto !important;
+    }
+
+    .column {
+        width: 100%;
+        padding: 1.5rem 0 !important;
+        border-left: none !important;
+        border-right: none !important;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .column:last-child {
+        border-bottom: none;
+    }
+
+    .layer-content {
+        font-size: 1rem !important;
+        text-align: center;
+    }
+
+    /* --- Winning Formula Specifics --- */
+    .row-header {
+        width: auto !important;
+        margin-bottom: 0.25rem !important;
+        color: var(--color-accent) !important;
+    }
+
+    /* --- Title Slide (01) --- */
+    .slide.title-slide h1 {
+        font-size: 4.5rem !important;
+        margin-left: 0 !important;
+    }
+    
+    .slide.title-slide .subtitle {
+        margin-bottom: 3rem !important;
+        font-size: 1rem !important;
+    }
+
+    /* --- The Ask ($2M) --- */
+    div[style*="font-size: 8rem"] {
+        font-size: 5rem !important; /* Resize the $2M text */
+    }
+
+    /* --- Misc --- */
+    .insight-row {
+        margin-top: 2rem !important;
+        padding-top: 2rem !important;
+    }
+    
+    .loop-arrow, .arrow-down {
+        display: none !important; /* Hide arrows on mobile to save space */
     }
 }
